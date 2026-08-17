@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+try {
+  var t = localStorage.getItem('tema-serena');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'scuro' : 'chiaro';
+  document.documentElement.setAttribute('data-tema', t);
+} catch (e) { document.documentElement.setAttribute('data-tema', 'chiaro'); }
+</script>
 </head>
 <body>
 
@@ -21,6 +28,7 @@
       <a href="cv.html">CV</a>
       <a href="teaching.html">Teaching</a>
       <a href="miscellanea.html">[ Miscellanea ]</a>
+      <button id="tema-bottone" type="button">☾</button>
     </nav>
   </div>
 </header>
@@ -72,8 +80,8 @@
 
   <div class="pubblicazione">
     <p class="autori">Afonso A., Alves J. and Ionta S.</p>
-    <p class="titolo-lavoro"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=it&amp;user=isIBPNcAAAAJ&amp;citation_for_view=isIBPNcAAAAJ:3fE2CSJIrl8C">Monetary
-       policy surprises and fiscal sustainability: the case of the Euro Area</a>.</p>
+    <p class="titolo-lavoro">Monetary policy surprises and fiscal sustainability:
+       the case of the Euro Area.</p>
     <p class="rivista"><em>Economic Change and Restructuring</em>, 2025.
        &middot; <a href="https://doi.org/10.1007/s10644-025-09881-4">DOI</a></p>
   </div>
@@ -131,6 +139,8 @@
 <footer class="piede">
   <div>Serena Ionta &middot; Bocconi University, Milan</div>
 </footer>
+
+<script src="theme.js"></script>
 
 </body>
 </html>

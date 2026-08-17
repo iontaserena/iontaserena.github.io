@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+try {
+  var t = localStorage.getItem('tema-serena');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'scuro' : 'chiaro';
+  document.documentElement.setAttribute('data-tema', t);
+} catch (e) { document.documentElement.setAttribute('data-tema', 'chiaro'); }
+</script>
 </head>
 <body>
 
@@ -21,6 +28,7 @@
       <a href="cv.html" class="attivo">CV</a>
       <a href="teaching.html">Teaching</a>
       <a href="miscellanea.html">[ Miscellanea ]</a>
+      <button id="tema-bottone" type="button">☾</button>
     </nav>
   </div>
 </header>
@@ -29,33 +37,8 @@
 
   <h1>CV</h1>
 
-  <div class="introduzione">
-
-    <div class="colonna-testo">
-      <p>You can find my full CV
-         <a href="https://drive.google.com/file/d/19vRBDau8rG2uEDJdrMSVEcn_MA61PKgi/view?usp=drive_link">here</a>.</p>
-
-      <p><strong>Research interests</strong><br>
-         Macroeconomics &middot; Macro-Finance &middot; Time Series Analysis &middot;
-         Civil Economics</p>
-
-      <p><strong>Contact</strong><br>
-         <a href="mailto:serena.ionta2@unibocconi.it">serena.ionta2[at]unibocconi.it</a></p>
-    </div>
-
-    <div class="colonna-foto">
-      <!-- Carica il quadro con il nome painting.jpg, poi cancella il riquadro
-           qui sotto e togli i commenti dal tag <img>. -->
-      <div class="foto-segnaposto">
-        <span>Carica il quadro<br>con il nome <strong>painting.jpg</strong></span>
-      </div>
-      <!--
-      <img src="painting.jpg" alt="Painting by James Pollock">
-      -->
-      <p class="didascalia">Painting made by James Pollock.</p>
-    </div>
-
-  </div>
+  <p>You can find my full CV
+     <a href="https://drive.google.com/file/d/19vRBDau8rG2uEDJdrMSVEcn_MA61PKgi/view?usp=drive_link">here</a>.</p>
 
   <h2>Academic Positions</h2>
 
@@ -130,6 +113,8 @@
 <footer class="piede">
   <div>Serena Ionta &middot; Bocconi University, Milan</div>
 </footer>
+
+<script src="theme.js"></script>
 
 </body>
 </html>

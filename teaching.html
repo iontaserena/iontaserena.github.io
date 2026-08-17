@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+try {
+  var t = localStorage.getItem('tema-serena');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'scuro' : 'chiaro';
+  document.documentElement.setAttribute('data-tema', t);
+} catch (e) { document.documentElement.setAttribute('data-tema', 'chiaro'); }
+</script>
 </head>
 <body>
 
@@ -21,6 +28,7 @@
       <a href="cv.html">CV</a>
       <a href="teaching.html" class="attivo">Teaching</a>
       <a href="miscellanea.html">[ Miscellanea ]</a>
+      <button id="tema-bottone" type="button">☾</button>
     </nav>
   </div>
 </header>
@@ -130,6 +138,8 @@
 <footer class="piede">
   <div>Serena Ionta &middot; Bocconi University, Milan</div>
 </footer>
+
+<script src="theme.js"></script>
 
 </body>
 </html>

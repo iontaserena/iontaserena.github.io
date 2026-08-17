@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+try {
+  var t = localStorage.getItem('tema-serena');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'scuro' : 'chiaro';
+  document.documentElement.setAttribute('data-tema', t);
+} catch (e) { document.documentElement.setAttribute('data-tema', 'chiaro'); }
+</script>
 </head>
 <body>
 
@@ -21,6 +28,7 @@
       <a href="cv.html">CV</a>
       <a href="teaching.html">Teaching</a>
       <a href="miscellanea.html" class="attivo">[ Miscellanea ]</a>
+      <button id="tema-bottone" type="button">☾</button>
     </nav>
   </div>
 </header>
@@ -74,24 +82,7 @@
 
     <div class="colonna-foto">
 
-      <!-- Copertina del libro: carica il file come book.jpg, cancella il riquadro
-           qui sotto e togli i commenti dal tag <img>. -->
-      <div class="foto-segnaposto">
-        <span>Copertina del libro<br>con il nome <strong>book.jpg</strong></span>
-      </div>
-      <!--
-      <img src="book.jpg" alt="Book cover — Saint Francis and the economy">
-      -->
-
-      <!-- Foto del Van Gogh Museum: carica il file come vangogh.jpg, cancella il riquadro
-           qui sotto e togli i commenti dal tag <img>. -->
-      <div class="foto-segnaposto" style="margin-top:32px">
-        <span>Foto Van Gogh Museum<br>con il nome <strong>vangogh.jpg</strong></span>
-      </div>
-      <!--
-      <img src="vangogh.jpg" alt="Van Gogh Museum, Amsterdam" style="margin-top:32px">
-      -->
-      <p class="didascalia">Photo taken by me. Van Gogh Museum, Amsterdam (NL).</p>
+      <img src="book.jpg" alt="L&rsquo;economia di san Francesco &mdash; a cura di Serena Ionta e Paolo Santori, Citt&agrave; Nuova">
 
     </div>
 
@@ -102,6 +93,8 @@
 <footer class="piede">
   <div>Serena Ionta &middot; Bocconi University, Milan</div>
 </footer>
+
+<script src="theme.js"></script>
 
 </body>
 </html>

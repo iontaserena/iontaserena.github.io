@@ -435,3 +435,36 @@ footer.piede div {
   .colonna-foto { flex: 0 0 100%; max-width: 300px; }
   ul.riviste { columns: 1; }
 }
+
+/* ---------- Job Market Paper ---------- */
+
+.pubblicazione.jmp {
+  border: 1px solid var(--bordo);
+  border-left: 3px solid var(--link);
+  border-radius: 8px;
+  padding: 18px 22px;
+  background: var(--sfondo-tenue);
+}
+
+.pubblicazione.jmp:hover { border-left-color: var(--link); }
+
+.jmp details { margin-top: 12px; }
+
+.jmp summary {
+  cursor: pointer;
+  color: var(--link);
+  font-size: 13px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.jmp summary::-webkit-details-marker { display: none; }
+.jmp summary::before { content: "\25B8\00a0"; }
+.jmp details[open] summary::before { content: "\25BE\00a0"; }
+
+.jmp details p {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: var(--testo-tenue);
+}

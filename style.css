@@ -468,3 +468,9 @@ footer.piede div {
   font-size: 15px;
   color: var(--testo-tenue);
 }
+
+.jmp .presentazioni {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: var(--testo-tenue);
+}
